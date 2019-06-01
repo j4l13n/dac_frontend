@@ -1,25 +1,27 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import Dashboard from './views/Dashboard/Dashboard';
+import Subscribers from './views/Subscribers/Subscribers';
+import Trees from './views/Trees/Trees';
+import Calls from './views/Calls/Calls';
+import Responses from './views/Responses/Responses';
+import Messages from './views/Messages/Messages';
+import Settings from './views/Settings/Settings';
+import AddSubscriber from './views/Subscribers/AddSubscriber'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Route exact path="/" component={Dashboard} />
+      <Route exact path="/subscribers" component={Subscribers} />
+      <Route exact path="/trees" component={Trees} />
+      <Route exact path="/calls" component={Calls} />
+      <Route exact path="/responses" component={Responses} />
+      <Route exact path="/messages" component={Messages} />
+      <Route exact path="/settings" component={Settings} />
+      <Route exact path="/add-subscriber" component={AddSubscriber} />
+    </Router>
   );
 }
 
