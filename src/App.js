@@ -9,6 +9,8 @@ import Responses from './views/Responses/Responses';
 import Messages from './views/Messages/Messages';
 import Settings from './views/Settings/Settings';
 import AddSubscriber from './views/Subscribers/AddSubscriber'
+import AddTree from './views/Trees/AddTree';
+import AddMessage from './views/Messages/AddMessage';
 
 function App() {
   return (
@@ -21,6 +23,8 @@ function App() {
       <Route exact path="/messages" component={Messages} />
       <Route exact path="/settings" component={Settings} />
       <Route exact path="/add-subscriber" component={AddSubscriber} />
+      <Route exact path="/add-tree" component={AddTree} />
+      <Route exact path="/send-message" component={AddMessage} />
     </Router>
   );
 }

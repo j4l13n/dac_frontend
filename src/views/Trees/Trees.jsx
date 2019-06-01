@@ -3,6 +3,7 @@ import Sidebar from './../../components/Sidebar/Sidebar.jsx';
 import Header from './../../components/Header/Header.jsx';
 import { Grid, Row, Col, Table } from "react-bootstrap";
 import { Card } from './../../components/Card/Card.jsx';
+import { Link } from "react-router-dom";
 
 class Trees extends Component {
     render() {
@@ -22,9 +23,9 @@ class Trees extends Component {
                                 content={
                                 <div>
                                     <div className="">
-                                    <a href="/add-tree" className="btn btn-primary pull-right" style={{ marginRight: "10px"}}>
+                                    <Link to="/add-tree" className="btn btn-primary pull-right" style={{ marginRight: "10px" }} >
                                         Add New Tree
-                                    </a>
+                                    </Link>
                                     </div>
                                     <Table striped hover>
                                     <thead>

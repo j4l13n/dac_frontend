@@ -3,7 +3,6 @@ import { Grid, Row, Col } from "react-bootstrap";
 
 import { Card } from "./../../components/Card/Card.jsx";
 import { StatsCard } from "./../../components/StatsCard/StatsCard.jsx";
-//import { Tasks } from "./../../components/Tasks/Tasks.jsx";
 import Sidebar from "./../../components/Sidebar/Sidebar.jsx"
 import Header from "./../../components/Header/Header.jsx"
 import ChartistGraph from "react-chartist";
@@ -64,9 +63,9 @@ class Dashboard extends Component {
                             </Col>
                             <Col lg={3} sm={6}>
                             <StatsCard
-                                bigIcon={<i className="fa fa-twitter text-info" />}
-                                statsText="Followers"
-                                statsValue="+45"
+                                bigIcon={<i className="pe-7s-refresh text-secondary" />}
+                                statsText="Responses"
+                                statsValue="45"
                                 statsIcon={<i className="fa fa-refresh" />}
                                 statsIconText="Updated now"
                             />
