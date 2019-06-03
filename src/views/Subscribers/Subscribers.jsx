@@ -5,7 +5,29 @@ import { Grid, Row, Col, Table } from "react-bootstrap";
 import { Card } from './../../components/Card/Card.jsx';
 import { Link } from 'react-router-dom';
 
+
 class Subscribers extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            subscribers: [],
+            errors: []
+        }
+    }
+
+    componentDidMount() {
+        fetch("http://localhost:4000/subscribers")
+            .then(response => response.json())
+            .then(response => {
+                this.setState({
+                    subscribers: response.data
+                });
+            }).catch(err => {
+                this.setState({
+                    errors: err
+                });
+            });
+    }
     render() {
         return (
             <div className="content">
@@ -38,7 +60,19 @@ class Subscribers extends Component {
                                         </tr>
                                     </thead>
                                     <tbody>
-
+                                        { this.state.subscribers.map((subscriber, key) => {
+                                            return (
+                                                <tr key={key}>
+                                                    <td>{key}</td>
+                                                    <td>{subscriber.name}</td>
+                                                    <td>{subscriber.phone}</td>
+                                                    <td>{subscriber.location}</td>
+                                                    <td>
+                                                    <Link to="#pabro" style={{ paddingRight: "10px" }}><i className="glyphicon glyphicon-pencil"></i></Link>
+                                                    </td>
+                                                </tr>
+                                            );
+                                        })}
                                     </tbody>
                             </Table>
                         </div>

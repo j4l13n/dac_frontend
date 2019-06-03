@@ -4,8 +4,16 @@ import Header from './../../components/Header/Header.jsx';
 import { Grid, Row, Col, Table } from "react-bootstrap";
 import { Card } from './../../components/Card/Card.jsx';
 import { Link } from "react-router-dom";
+import { Button } from 'react-bootstrap';
 
 class Trees extends Component {
+    onCall() {
+        fetch("")
+            .then(response => response.json())
+            .catch(err => {
+                console.log(err);
+            })
+    }
     render() {
         return (
             <div className="content">
@@ -23,27 +31,12 @@ class Trees extends Component {
                                 content={
                                 <div>
                                     <div className="">
-                                    <Link to="/add-tree" className="btn btn-primary pull-right" style={{ marginRight: "10px" }} >
-                                        Add New Tree
-                                    </Link>
+                                        <Button onClick={this.onCall}></Button>
                                     </div>
-                                    <Table striped hover>
-                                    <thead>
-                                        <tr>
-                                            <th>Id</th>
-                                            <th>Creator</th>
-                                            <th>Title</th>
-                                            <th>Description</th>
-                                            <th>Action</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-
-                                    </tbody>
-                            </Table>
-                        </div>
-                        }
-                    />
+                                    
+                                </div>
+                                }
+                            />
                     </Col>
                 </Row>
                 </Grid>
