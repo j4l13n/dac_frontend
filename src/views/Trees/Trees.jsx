@@ -8,11 +8,13 @@ import { Button } from 'react-bootstrap';
 
 class Trees extends Component {
     onCall() {
-        fetch("")
-            .then(response => response.json())
-            .catch(err => {
-                console.log(err);
-            })
+        fetch("", {
+            method: 'GET'
+        })
+        .then(response => response.json())
+        .catch(err => {
+            console.log(err);
+        })
     }
     render() {
         return (
@@ -23,23 +25,23 @@ class Trees extends Component {
                     <Grid fluid>
                         <Row>
                             <Col md={12}>
-                            <Card
-                                title="All Trees you have now"
-                                category="Your Trees created since you started."
-                                ctTableFullWidth
-                                ctTableResponsive
-                                content={
-                                <div>
-                                    <div className="">
-                                        <Button onClick={this.onCall}></Button>
-                                    </div>
-                                    
-                                </div>
-                                }
-                            />
-                    </Col>
-                </Row>
-                </Grid>
+                                    <Card
+                                        title="Try to click the button for a test call"
+                                        category="This test the call"
+                                        ctTableFullWidth
+                                        ctTableResponsive
+                                        content={
+                                        <div>
+                                            <div className="col-md-4" style={{ marginBottom: "20px" }}>
+                                                <Button className="btn btn-info" onClick={this.onCall}>Call me</Button>
+                                            </div>
+                                        </div>
+                                        }
+                                        style={{ paddingBottom: "20px" }}
+                                    />
+                            </Col>
+                        </Row>
+                    </Grid>
                 </div>
             </div>
         );
